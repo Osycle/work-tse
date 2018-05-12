@@ -5,11 +5,6 @@
 
 
 
-@for $i from 0 through 10 {
-	.box-#{10*$i} { 
-		width: 10*$i+%;
-	}
-}
 
 //-----------------------------PADD
 html{
@@ -118,6 +113,37 @@ html{
 }
 
 //--------------------Figure-MARGIN
+@for $i from 0 through 12{
+	.pie-xs-flex-#{$i} {
+		flex-basis: ( ($i*100) /12)+%;
+	}
+}
+
+@media (min-width:768px){
+	@for $i from 0 through 12{
+		.pie-sm-flex-#{$i} {
+			flex-basis: ( ($i*100) /12)+%;
+		}
+	}
+}
+
+@media (min-width:992px){
+	@for $i from 0 through 12{
+		.pie-md-flex-#{$i} {
+			flex-basis: ( ($i*100) /12)+%;
+		}
+	}
+}
+
+
+@media (min-width:1200px){
+	@for $i from 0 through 12{
+		.pie-lg-flex-#{$i} {
+			flex-basis: ( ($i*100) /12)+%;
+		}
+	}
+}
+
 
 @for $i from 0 through 12 {
 	.figure-m-v-#{5*$i} { 
@@ -139,9 +165,41 @@ html{
 	}
 }
 
-// PIE
+
+//--BOX
+@for $i from 0 through 10 {
+	.box-xs-#{$i} { 
+		width: 10*$i+%;
+	}
+}
+@media (min-width:768px){
+	@for $i from 0 through 10{
+		.box-sm-#{$i} {
+			width: 10*$i+%;
+		}
+	}
+}
+
+@media (min-width:992px){
+	@for $i from 0 through 10{
+		.box-md-#{$i} {
+			width: 10*$i+%;
+		}
+	}
+}
 
 
+@media (min-width:1200px){
+	@for $i from 0 through 12{
+		.box-lg-#{$i} {
+			flex-basis: ( ($i*100) /12)+%;
+		}
+	}
+}
+
+
+
+//--PIE
 
 
 
@@ -217,6 +275,7 @@ html{
 }
 
 
+
 @for $i from 0 through 12{
 	.pie-xs-flex-#{$i} {
 		flex-basis: ( ($i*100) /12)+%;
@@ -247,6 +306,18 @@ html{
 		}
 	}
 }
+
+
+
+@media (min-width:992px){
+	.pie-flex-5 {
+		[class*="pie-flex"]{
+			flex-basis: (100/5)+%;	
+		}		
+	}
+}
+
+
 
 
 

@@ -5,18 +5,17 @@
 
 
 
-    // AOS
+    //--AOS
     AOS.init({
       offset: 100,
       once: true,
       duration: 1100,
       delay: 150
     });
+    setTimeout(function() { AOS.refresh(); }, 1);
 
-    setTimeout(function() {
-      AOS.refresh();
-    }, 1);
 
+    //--MMENU
     $("#min-menu").mmenu({
       extensions: [
         "pagedim-black", // wrapper-bg black
@@ -46,7 +45,7 @@
       ]
     }, {});
 
-    // Flikity Carousel
+    //--Flikity Carousel
     function flickityPrevNext(className) {
       var carouselWrapper = $(className);
       var carousel = carouselWrapper.find(".carousel-items");
@@ -84,7 +83,7 @@
       x3: 30
     };
 
-    if ($(".short-partners-carousel .carousel-items figure").length > 3)
+    if ($(".short-partners-carousel .carousel-items figure").length > 4)
       $('.short-partners-carousel .carousel-items').flickity({
         imagesLoaded: true,
         autoPlay: false,
@@ -99,7 +98,69 @@
         percentPosition: true,
         cellAlign: 'center'
       });
-
+    if ($(".short-projects-carousel .carousel-items figure").length > 4)
+      $('.short-projects-carousel .carousel-items').flickity({
+        imagesLoaded: true,
+        autoPlay: 3000,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 1,
+        prevNextButtons: true,
+        draggable: true,
+        wrapAround: true,
+        pageDots: false,
+        contain: false,
+        percentPosition: true,
+        cellAlign: 'left'
+      });
+      $('.short-reviews-carousel .carousel-items').flickity({
+        imagesLoaded: true,
+        autoPlay: 3000,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 1,
+        prevNextButtons: false,
+        draggable: checkSm(),
+        friction: 1,
+        selectedAttraction: 1,
+        wrapAround: true,
+        pageDots: true,
+        contain: false,
+        percentPosition: true,
+        cellAlign: 'left'
+      });
+    //if ($(".short-staff-carousel .carousel-items figure").length > 3)
+      var carouselStaffMain = $('.short-staff-carousel.carousel-main .carousel-items').flickity({
+        imagesLoaded: true,
+        autoPlay: 3500,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        initialIndex: 2,
+        prevNextButtons: false,
+        draggable: false,
+        wrapAround: true,
+        pageDots: false,
+        friction: 1,
+        selectedAttraction: 1,
+        contain: false,
+        percentPosition: true,
+        cellAlign: 'center'
+      })
+      $('.short-staff-carousel.carousel-nav .carousel-items').flickity({
+        imagesLoaded: true,
+        autoPlay: false,
+        pauseAutoPlayOnHover: true,
+        arrowShape: arrowStyle,
+        asNavFor: carouselStaffMain[0],
+        initialIndex: 1,
+        prevNextButtons: true,
+        draggable: true,
+        wrapAround: true,
+        pageDots: false,
+        contain: false,
+        percentPosition: true,
+        cellAlign: 'left'
+      });
     // FANCYBOX
     if ($("[data-fancybox='gallery']").length != 0)
       $("[data-fancybox='gallery']").fancybox({
