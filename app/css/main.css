@@ -11142,14 +11142,14 @@ http://flickity.metafizzy.co
 /*
 	_style.css
 */
-.fuller, .claf, [data-flicker]:before, html body .tp-bullets.simplebullets.round .bullet:before, .menu ul:not([class*="sub-menu"]) > li:before, .cell-hover, .hover-content .cell-hover, .min-menu-header .wrapper-bg, .rev-slider .wrapper-bg {
+.fuller, .claf, [data-flicker]:before, .pagination-div .pagination li:before, html body .tp-bullets.simplebullets.round .bullet:before, .menu ul:not([class*="sub-menu"]) > li:before, .cell-hover, .hover-content .cell-hover, .min-menu-header .wrapper-bg, .rev-slider .wrapper-bg {
   height: 100%;
   width: 100%;
   position: absolute;
   top: 0;
   left: 0; }
 
-.claf, [data-flicker]:before, html body .tp-bullets.simplebullets.round .bullet:before, .menu ul:not([class*="sub-menu"]) > li:before {
+.claf, [data-flicker]:before, .pagination-div .pagination li:before, html body .tp-bullets.simplebullets.round .bullet:before, .menu ul:not([class*="sub-menu"]) > li:before {
   content: ""; }
 
 .clafclear {
@@ -11321,6 +11321,12 @@ http://flickity.metafizzy.co
     -o-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
     padding: 0 5%; }
+    .hover-content .cell-hover.bg-color-1 {
+      background-color: rgba(20, 133, 200, 0.5); }
+    .hover-content .cell-hover.bg-color-2 {
+      background-color: rgba(34, 195, 243, 0.5); }
+    .hover-content .cell-hover.bg-color-3 {
+      background-color: rgba(41, 131, 246, 0.5); }
     .hover-content .cell-hover > div {
       width: 100%; }
   .hover-content:hover .cell-hover {
@@ -11399,18 +11405,38 @@ http://flickity.metafizzy.co
   -webkit-border-radius: 30px;
   border-radius: 30px;
   margin: 0 10px;
-  font-weight: 500; }
+  font-weight: 500;
+  position: relative; }
+  .pagination-div .pagination li:before {
+    background-color: #22c3f3;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-left: -10px;
+    z-index: 0;
+    opacity: 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg); }
   .pagination-div .pagination li:hover a {
     color: #1485c8; }
   .pagination-div .pagination li a {
+    z-index: 1;
+    position: relative;
     border: 1px solid transparent;
     color: black;
     border: 0;
     background-color: transparent; }
   .pagination-div .pagination li.active {
     padding: 5px;
-    background-color: #1485c8;
     border: 1px solid transparent; }
+    .pagination-div .pagination li.active:before {
+      opacity: 1; }
     .pagination-div .pagination li.active a {
       color: white; }
     .pagination-div .pagination li.active:hover a {
@@ -11905,6 +11931,8 @@ html body .tp-bullets.simplebullets.round .bullet {
         background-color: transparent; }
     .menu ul:not([class*="sub-menu"]) > li:hover:before, .menu ul:not([class*="sub-menu"]) > li.active:before {
       opacity: 1; }
+  .menu ul:not([class*="sub-menu"]):hover .active:before {
+    opacity: 0.3; }
   .menu .sub-menu-1 {
     padding: 3px 5px;
     -webkit-transform: matrix(1, 0, 0, 1, 0, 7) scale(0);
@@ -12298,6 +12326,9 @@ body, #page {
   .main-content .entry-content ul, .main-content .desc-content ul, .main-content .text-content ul {
     margin: 20px 0; }
 
+.date {
+  color: #d1d1d1; }
+
 .breadcrumb-container {
   margin: 30px 0; }
 
@@ -12406,6 +12437,10 @@ a[target="_blank"] {
 .grid-img-sizer,
 .grid-img-item {
   width: 25%; }
+  @media (max-width: 991px) {
+    .grid-img-sizer,
+    .grid-img-item {
+      width: 50%; } }
 
 .grid-img-item img {
   display: block;
@@ -12665,6 +12700,23 @@ a[target="_blank"] {
 .career-form .btn-def {
   -webkit-border-radius: 15px;
   border-radius: 15px; }
+
+.news-items figure h4, .news-items figure h3 {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
+
+.news-items figure:hover h4, .news-items figure:hover h3 {
+  color: #1485c8; }
+
+.news-items figure .img {
+  background-position: center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 160px; }
+
+.news-items figure .desc-content p {
+  font: 0.9em/1.8em sans-serif; }
 
 /*
 										 ---FOOTER---
