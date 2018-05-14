@@ -12,7 +12,7 @@
       duration: 1100,
       delay: 150
     });
-    setTimeout(function() { AOS.refresh(); }, 1);
+    setTimeout(function() { AOS.refresh(); }, 1000);
 
 
     //--MMENU
@@ -132,7 +132,7 @@
     //if ($(".short-staff-carousel .carousel-items figure").length > 3)
       var carouselStaffMain = $('.short-staff-carousel.carousel-main .carousel-items').flickity({
         imagesLoaded: true,
-        autoPlay: 3500,
+        autoPlay: false,
         pauseAutoPlayOnHover: true,
         arrowShape: arrowStyle,
         initialIndex: 2,
@@ -148,7 +148,7 @@
       })
       $('.short-staff-carousel.carousel-nav .carousel-items').flickity({
         imagesLoaded: true,
-        autoPlay: false,
+        autoPlay: 3000,
         pauseAutoPlayOnHover: true,
         arrowShape: arrowStyle,
         asNavFor: carouselStaffMain[0],
@@ -159,7 +159,7 @@
         pageDots: false,
         contain: false,
         percentPosition: true,
-        cellAlign: 'left'
+        cellAlign: 'center'
       });
     // FANCYBOX
     if ($("[data-fancybox='gallery']").length != 0)
