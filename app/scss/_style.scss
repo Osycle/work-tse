@@ -1042,30 +1042,33 @@ $header-min-menu: 100px;
 
 
 //MMENU
-.mm-navbar{
-	.close-btn{
-		width: 35px;
-		height: 35px;
-	}
-}
-.mm-listview{
-
-}
 .mm-slideout{
 	z-index: auto;
-}
-.mm-menu{
-
 }
 .mm-navbar{
 	position: relative;
 	.close-btn{
 		position: absolute;
+		width: 35px;
+		height: 35px;
 		top: 30px;
 		right: 20px;
+		pointer-events: auto;
 		font-size: 60px;
 		opacity: 0.8;
+		height: 60px;
+		padding:0 ;
+		width: 50px;
+		a{
+			display: block;
+			transform: scale(0.7);
+			height: 50px;
+			&:focus{
+				outline: none;
+			}
+		}
 		[class^="icon"]{
+			top: 25px;
 			//box-shadow: 0 0 2px black;
 		}
 	}
@@ -1729,6 +1732,7 @@ a[target="_blank"]{
 		height: 500px;
 		figure{
 			width: 100%;
+
 			.cell-hover{
 				background-color: rgba($color-1, 0.3);
 				width: calc(100% - 30px);
@@ -1742,10 +1746,12 @@ a[target="_blank"]{
 				background-position: center;
 				width: 100%;
 				height: 500px;
+
 			}
 			.img-content{
 				&:hover{
 					.cell-hover{
+
 						opacity: 1;
 						transform: scale(0.9);
 					}
@@ -1760,7 +1766,7 @@ a[target="_blank"]{
 			transition: all 0.5s ease 0.1s;
 		}
 		.img-content{
-			transition: all 0.5s ease 0.1s;
+			
 			opacity: 0;
 			transform: translateX(-100%);
 		}
@@ -1770,6 +1776,7 @@ a[target="_blank"]{
 			}
 			.img-content, .desc-content{
 				opacity: 1;
+				transition: all 0.5s ease 0.1s;
 				transform: unset;
 			}
 		}
