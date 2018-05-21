@@ -11949,7 +11949,7 @@ html body .tp-bullets.simplebullets.round .bullet {
     padding: 1px 3px; }
     .lang a:hover {
       text-decoration: underline;
-      color: white; }
+      color: #22c3f3; }
   .lang li.active a {
     color: #1485c8; }
 
@@ -12490,9 +12490,9 @@ a[target="_blank"] {
     .rev-slider {
       text-align: center; }
       .rev-slider .slide-header {
-        width: 100%;
-        left: 0 !important;
-        top: 20% !important; }
+        width: 100%; }
+      .rev-slider p {
+        display: none !important; }
       .rev-slider .btn-def {
         margin: 15px auto !important; }
       .rev-slider h1, .rev-slider h2 {
@@ -12581,15 +12581,20 @@ a[target="_blank"] {
       -ms-transform: scale(1);
       transform: scale(1);
       opacity: 0.0;
-      -webkit-transition: all 0.5s ease-in-out 0.2s;
-      -o-transition: all 0.5s ease-in-out 0.2s;
-      transition: all 0.5s ease-in-out 0.2s; }
+      -webkit-transition: all 0.5s ease-in-out;
+      -o-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out; }
     .short-staff-carousel.carousel-main figure .img {
       -webkit-background-size: cover;
       background-size: cover;
       background-position: center;
       width: 100%;
       height: 500px; }
+    .short-staff-carousel.carousel-main figure .img-content:hover .cell-hover {
+      opacity: 1;
+      -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+      transform: scale(0.9); }
   .short-staff-carousel.carousel-main .desc-content {
     max-height: 280px;
     opacity: 0;
@@ -12608,11 +12613,6 @@ a[target="_blank"] {
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%); }
-  .short-staff-carousel.carousel-main .is-selected .cell-hover {
-    opacity: 1;
-    -webkit-transform: scale(0.9, 0.93);
-    -ms-transform: scale(0.9, 0.93);
-    transform: scale(0.9, 0.93); }
   .short-staff-carousel.carousel-main .is-selected .img-content, .short-staff-carousel.carousel-main .is-selected .desc-content {
     opacity: 1;
     -webkit-transform: unset;
